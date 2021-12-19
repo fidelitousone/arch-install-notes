@@ -47,7 +47,7 @@ turn on swap
 
 ### install linux
 
-`pacstrap /mnt base linux linux-firmware emacs`
+`pacstrap /mnt base linux linux-firmware emacs networkmanager`
 
 ### fstab shit
 
@@ -77,16 +77,28 @@ put in `LANG=en_US.UTF-8` and save
 `emacs /etc/hostname`
 
 ```
-myhostname
+whateverhostname
 
 ```
 
 ### network configuration
+
+`systemctl enable NetworkManager.service`
+
+### bootloader
+
+`pacman -S grub efibootmgr dosfstools os-prober mtools`
+
+`mkdir /boot/EFI`
+`mount /dev/sdX1` /boot/EFI`
+`grub-install --target=x86-efi --efi-directory=/boot/EFI --bootloader-id=grub_uefi --recheck`
+
+`reboot`
 
 
 
 
 
 ## sources i used
-https://www.reddit.com/r/archlinux/comments/otu8lw/comment/h6zozdq/?utm_source=share&utm_medium=web2x&context=3
-https://www.youtube.com/watch?v=PQgyW10xD8s
+- https://www.reddit.com/r/archlinux/comments/otu8lw/comment/h6zozdq/?utm_source=share&utm_medium=web2x&context=3
+- https://www.youtube.com/watch?v=PQgyW10xD8s

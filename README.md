@@ -90,7 +90,7 @@ whateverhostname
 `pacman -S grub efibootmgr dosfstools os-prober mtools`
 
 `mkdir /boot/EFI`
-`mount /dev/sdX1` /boot/EFI`
+`mount /dev/sdX1 /boot/EFI`
 `grub-install --target=x86-efi --efi-directory=/boot/EFI --bootloader-id=grub_uefi --recheck`
 
 `reboot`

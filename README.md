@@ -87,7 +87,7 @@ whateverhostname
 
 ### bootloader
 
-`pacman -S grub efibootmgr dosfstools os-prober mtools`
+`pacman -S grub efibootmgr dosfstools os-prober mtools intel-ucode`
 
 `mkdir /boot/EFI`
 
